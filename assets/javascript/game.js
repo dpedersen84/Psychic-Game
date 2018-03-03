@@ -1,34 +1,34 @@
 // Arrays
 
-var letter = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
+const letter = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
                 "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
                 "u", "v", "w", "x", "y", "z"];
 
-var turns = 9;
+let turns = 9;
 
-var wins = 0;
+let wins = 0;
 
-var losses = 0;
+let losses = 0;
 
-var letterPicked = [];
+// let letterPicked = [];
 
 // Game Picks Random Letter(sets letterRandom variable to random choice of letter array)
 
-var letterRandom = letter[Math.floor(Math.random() * letter.length)];
+let letterRandom = letter[Math.floor(Math.random() * letter.length)];
 console.log("Computer pick = " + letterRandom);
 
 // Sets turnsRemaining Function to show Turns Left on main page
 
 function turnsRemaining () {
     document.getElementById("turns").innerHTML = "Turns Left: " + turns;
-    console.log(turns);
+    
 }
 
 // Sets lettersUsed function to show Letters picked on main page
 
 function lettersUsed () {
     document.getElementById("letterPicked").innerHTML = "Letters Picked: " + letterPicked.join(' ');
-    console.log(lettersUsed);
+    
 }
 
 // Reset function
@@ -42,8 +42,15 @@ function reset () {
 
 document.onkeyup = function(event) {
     console.log("Key Pressed = " + event.key); // Key user presses
-    console.log(letterPicked);
+
+    var letterPicked = [];
+
+    document.getElementById("letters").innerHTML = letterPicked;
     
+    function lettersUsed () {
+        letterPicked.push(event.key);
+        document.getElementById("letters").innerHTML = letterPicked;
+    }
 
     // Determines whether key pressed is correct guess
     if (letterRandom === event.key) {
@@ -58,6 +65,7 @@ document.onkeyup = function(event) {
     losses = losses + 1;
     console.log("Losses = " + losses);
     document.getElementById("losses").innerHTML = "Losses: " + losses;
+    reset ();
     }
 
 
