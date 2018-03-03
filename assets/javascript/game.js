@@ -20,14 +20,14 @@ console.log("Computer pick = " + letterRandom);
 // Sets turnsRemaining Function to show Turns Left on main page
 
 function turnsRemaining () {
-    document.querySelector("#turns").innerHTML = "Turns Left: " + turns;
-    console.log(turnsRemaining);
+    document.getElementById("turns").innerHTML = "Turns Left: " + turns;
+    console.log(turns);
 }
 
-// Sets lettersUsed function to show Letter picked on main page
+// Sets lettersUsed function to show Letters picked on main page
 
 function lettersUsed () {
-    document.getElementById("#letterPicked").innerHTML = "Letters Picked: " + letterPicked.join(' ');
+    document.getElementById("letterPicked").innerHTML = "Letters Picked: " + letterPicked.join(' ');
     console.log(lettersUsed);
 }
 
@@ -42,6 +42,7 @@ function reset () {
 
 document.onkeyup = function(event) {
     console.log("Key Pressed = " + event.key); // Key user presses
+    console.log(letterPicked);
     
 
     // Determines whether key pressed is correct guess
@@ -49,14 +50,14 @@ document.onkeyup = function(event) {
     alert("Correct!") //Correct Alert Window
     wins = wins + 1;
     console.log("Wins = "  + wins);
-    document.querySelector("#wins").innerHTML = "Wins: " + wins;
-    reset ()
+    document.getElementById("wins").innerHTML = "Wins: " + wins;
+    reset ();
     
     } else {
     alert("wrong!") //Wrong Alert Window
     losses = losses + 1;
     console.log("Losses = " + losses);
-    document.querySelector("#losses").innerHTML = "Losses: " + losses;
+    document.getElementById("losses").innerHTML = "Losses: " + losses;
     }
 
 
