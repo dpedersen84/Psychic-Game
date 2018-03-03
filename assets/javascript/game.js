@@ -24,20 +24,18 @@ function turnsRemaining () {
     console.log(turnsRemaining);
 }
 
+// Sets lettersUsed function to show Letter picked on main page
 
-
-// turnsRemaining (); 
-
-// Sets l
-
-
+function lettersUsed () {
+    document.getElementById("#letterPicked").innerHTML = "Letters Picked: " + letterPicked.join(' ');
+    console.log(lettersUsed);
+}
 
 // // Capture key
 
 document.onkeyup = function(event) {
-    console.log(event.key);
-
-    var key = [];
+    console.log("Key Pressed = " + event.key); // Key user presses
+    
 
     // Determines whether key pressed is correct guess
     if (letterRandom === event.key) {
