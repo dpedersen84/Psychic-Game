@@ -15,7 +15,7 @@ var letterPicked = [];
 // Game Picks Random Letter(sets letterRandom variable to random choice of letter array)
 
 var letterRandom = letter[Math.floor(Math.random() * letter.length)];
-console.log(letterRandom);
+console.log("Computer pick = " + letterRandom);
 
 // Sets turnsRemaining Function to show Turns Left on main page
 
@@ -31,6 +31,13 @@ function lettersUsed () {
     console.log(lettersUsed);
 }
 
+// Reset function
+
+function reset () {
+    var turns = 9;
+
+}
+
 // // Capture key
 
 document.onkeyup = function(event) {
@@ -42,7 +49,9 @@ document.onkeyup = function(event) {
     alert("Correct!") //Correct Alert Window
     wins = wins + 1;
     console.log("Wins = "  + wins);
-    document.querySelector("#wins").innerHTML = "Wins: " + wins; 
+    document.querySelector("#wins").innerHTML = "Wins: " + wins;
+    reset ()
+    
     } else {
     alert("wrong!") //Wrong Alert Window
     losses = losses + 1;
