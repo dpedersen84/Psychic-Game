@@ -54,7 +54,7 @@ document.onkeyup = function(event) {
     console.log("Guesses Left: " + guessesLeft); 
     console.log(event.key); 
 
-    //Save Key Even To Variable
+    //Save Key Event To Variable
     var letter = String.fromCharCode(event.which).toLowerCase();
 
     //Put Letter Variable into Guessed Letters Array
