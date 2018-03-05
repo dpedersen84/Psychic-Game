@@ -7,7 +7,6 @@ var computerLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
 //Stats Default
 var wins = 0;
 var losses = 0;
-var guesses = 10;
 var guessesLeft = 10;
 var guessedLetters = [];
 var guessThisLetter = null;
